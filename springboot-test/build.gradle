@@ -1,0 +1,5 @@
+dependencies {
+    api project(":springboot-core")
+    api 'org.springframework.boot:spring-boot-test'
+    api 'org.springframework:spring-test'
+}

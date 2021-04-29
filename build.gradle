@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'org.springframework.boot' version '2.4.4'  apply false
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+allprojects {
+    group = 'nameless.common'
+    version = '1.0'
+
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        maven { url "https://repo.maven.apache.org/maven2" }
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'io.spring.dependency-management'
+    dependencyManagement {
+        imports {
+            mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        }
+    }
+    dependencies {
+        constraints {
+            api 'org.projectlombok:lombok:1.18.12'
+        }
+        compileOnly('org.projectlombok:lombok')
+        annotationProcessor('org.projectlombok:lombok')
+        testCompileOnly('org.projectlombok:lombok')
+        testAnnotationProcessor('org.projectlombok:lombok')
+        api('org.slf4j:slf4j-api:1.7.30')
+    }
+}
