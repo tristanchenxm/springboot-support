@@ -12,6 +12,37 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * sample:
+ * <pre>{@code
+ * package sample;
+ *
+ * // no implementation interface
+ * public interface AbsentAllowedService {
+ *     void doSomething();
+ * }
+ *
+ * @Component
+ * public class FooComponent {
+ *     private final AbsentAllowedService service;
+ *     public FooComponent(AbsentAllowedService service) {
+ *         this.service = service;
+ *     }
+ *
+ *     public void foo() {
+ *         service.doSomething();
+ *     }
+ * }
+ *
+ * @AbsentAllowed(basePackages = "sample")
+ * @SpringBootApplication
+ * public class Application {
+ *     public static void main(String[] args) {
+ *         AbsentBeanAllowedSpringApplication.run(Application.class, args);
+ *     }
+ * }
+ * }</pre>
+ */
 public class AbsentBeanAllowedSpringApplication extends SpringApplication {
 
     private Class<? extends ConfigurableApplicationContext> applicationContextClass;
