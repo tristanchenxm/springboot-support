@@ -1,0 +1,1 @@
+* 自动将elasticsearch中的snake_case字段转为java习惯的camelCase
