@@ -1,0 +1,4 @@
+dependencies {
+    api 'org.springframework.cloud:spring-cloud-starter-netflix-zuul:2.2.8.RELEASE'
+    api 'org.springframework.boot:spring-boot'
+}

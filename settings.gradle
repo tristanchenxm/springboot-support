@@ -2,4 +2,5 @@ rootProject.name = 'springboot-support'
 include 'springboot-core'
 include 'springboot-test'
 include 'elasticsearch'
+include 'zuul'
 
