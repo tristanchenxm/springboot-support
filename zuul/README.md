@@ -7,7 +7,7 @@ zuul:
   routes:
     foo:
       path: /foo/**
-      serviceId: content-spider
+      serviceId: foo
       extraHeaders:
         authorization: basic Zm9vOnNlY3JldHNlY3JldHh4
         x-custom-header: header-value
