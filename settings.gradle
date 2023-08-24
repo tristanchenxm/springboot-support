@@ -3,4 +3,5 @@ include 'springboot-core'
 include 'springboot-test'
 include 'elasticsearch'
 include 'zuul'
+include 'cache-support'
 

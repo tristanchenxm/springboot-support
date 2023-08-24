@@ -37,6 +37,8 @@ subprojects {
         annotationProcessor('org.projectlombok:lombok')
         testCompileOnly('org.projectlombok:lombok')
         testAnnotationProcessor('org.projectlombok:lombok')
+        testImplementation platform('org.junit:junit-bom:5.9.1')
+        testImplementation 'org.junit.jupiter:junit-jupiter'
         api('org.slf4j:slf4j-api:1.7.30')
     }
 }
