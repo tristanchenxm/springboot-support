@@ -20,4 +20,10 @@ public class CacheConfiguration {
         return new ThreadLocalCacheManager();
     }
 }
+
+// use cache
+@Cacheable(cacheName = "foo", cacheManager = "threadLocalCacheManager")
+public Foo foo() {
+    return new Foo();
+}
 ```
